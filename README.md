@@ -1,108 +1,151 @@
 # Security Tools Notes
 
-This repository contains notes and command examples for commonly used cybersecurity tools.
+This repository contains theoretical notes for commonly used cybersecurity tools.
 
-These tools are widely used for penetration testing, network analysis, and vulnerability assessment.
-
+These tools are used in penetration testing, network analysis, and vulnerability assessment.
 
 ## Nmap
 
-Nmap is a network scanning tool used to discover hosts and services on a network.
+Nmap is a network discovery and security auditing tool.
 
-Basic scan
+### Why it is used
+- To identify active hosts on a network  
+- To detect open ports and running services  
+- To gather information about target systems  
 
-nmap 10.10.10.10
+### What it does
+- Scans networks to find live systems  
+- Identifies open, closed, and filtered ports  
+- Detects service versions and operating systems  
 
-Service detection
+### How it helps
+- Provides a clear attack surface of a target  
+- Helps in planning further exploitation  
+- Assists in network inventory and monitoring  
 
-nmap -sV 10.10.10.10
-
-Aggressive scan
-
-nmap -A 10.10.10.10
-
-Use case:
-Identifying open ports and services.
-
+### When to use
+- During reconnaissance phase of penetration testing  
+- Before vulnerability assessment  
+- When mapping a network environment  
 
 ## Wireshark
 
-Wireshark is a network protocol analyzer used to inspect network traffic.
+Wireshark is a network protocol analyzer.
 
-Common uses:
+### Why it is used
+- To inspect and analyze network traffic  
+- To understand communication between systems  
 
-- Analyzing packets
-- Detecting suspicious traffic
-- Troubleshooting network problems
+### What it does
+- Captures packets in real time  
+- Displays detailed protocol-level information  
 
+### How it helps
+- Identifies suspicious or malicious traffic  
+- Helps troubleshoot network issues  
+- Provides deep visibility into packet behavior  
+
+### When to use
+- During network troubleshooting  
+- When analyzing suspicious traffic  
+- While learning protocol behavior  
 
 ## Burp Suite
 
-Burp Suite is used for web application security testing.
+Burp Suite is a web application security testing tool.
 
-Capabilities include:
+### Why it is used
+- To test web applications for vulnerabilities  
+- To intercept and manipulate HTTP requests  
 
-- Intercepting HTTP requests
-- Testing for vulnerabilities
-- Modifying web requests
+### What it does
+- Acts as a proxy between browser and server  
+- Allows inspection and modification of requests and responses  
+
+### How it helps
+- Identifies security flaws in web applications  
+- Enables manual and automated testing  
+
+### When to use
+- During web application penetration testing  
+- When analyzing application behavior  
+- While testing authentication and input validation  
 
 ### Burp Repeater
 
-Burp Repeater allows testers to **manually modify and resend HTTP requests** to observe how a server responds.
+Burp Repeater is a module within Burp Suite for manual request testing.
 
-Example:
+### Why it is used
+- To test how a server responds to modified requests  
 
-GET /profile?id=5
+### What it does
+- Allows resending and modifying HTTP requests multiple times  
 
-Modified request:
+### How it helps
+- Helps identify vulnerabilities like IDOR, SQL injection  
+- Enables precise testing of parameters  
 
-GET /profile?id=10
+### When to use
+- After intercepting a request  
+- When testing specific inputs manually  
+- During detailed vulnerability analysis  
 
-Use case:
-Testing parameter manipulation and vulnerabilities such as IDOR or SQL injection.
-
----
 
 ### Burp Intruder
 
-Burp Intruder is used for **automated attacks on web application parameters** using payload lists.
+Burp Intruder is used for automated attacks on web application inputs.
 
-Common uses:
-- Brute force attacks
-- Parameter fuzzing
-- Testing input validation
+### Why it is used
+- To perform automated testing with multiple payloads  
 
-Example payload list:
+### What it does
+- Sends multiple requests with different payload combinations  
 
-123456  
-password  
-admin  
-qwerty
+### How it helps
+- Identifies weak authentication mechanisms  
+- Discovers input validation flaws  
 
-Intruder sends multiple requests with different payloads to identify vulnerabilities.
+### When to use
+- During brute force testing  
+- When fuzzing parameters  
+- While testing login forms and APIs  
 
 ## Gobuster
 
-Gobuster is used for directory and DNS brute forcing.
+Gobuster is a tool for directory and DNS brute forcing.
 
-Example:
+### Why it is used
+- To discover hidden files and directories  
 
-gobuster dir -u http://example.com -w /usr/share/wordlists/dirb/common.txt
+### What it does
+- Uses wordlists to brute-force endpoints  
 
-Use case:
-Finding hidden directories on websites.
+### How it helps
+- Finds hidden resources not visible in UI  
+- Expands attack surface  
 
+### When to use
+- During web reconnaissance  
+- Before vulnerability testing  
+- When mapping web application structure  
 
 ## Metasploit
 
-Metasploit is a penetration testing framework used to develop and execute exploits.
+Metasploit is a penetration testing framework.
 
-Example workflow:
+### Why it is used
+- To develop and execute exploits  
 
-1. Search for exploit
-2. Configure payload
-3. Launch exploit
+### What it does
+- Provides modules for exploits, payloads, and auxiliary functions  
 
-Use case:
-Testing vulnerabilities in controlled environments.
+### How it helps
+- Validates vulnerabilities  
+- Automates exploitation process  
 
+### When to use
+- After identifying vulnerabilities  
+- During exploitation phase  
+- In controlled penetration testing environments  
+
+---
