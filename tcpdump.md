@@ -1,6 +1,4 @@
-# tcpdump Reference Guide
 
-## Overview
 `tcpdump` is a command-line packet analyzer used to capture and inspect network traffic in real time or from `.pcap` files.
 -i	Select interface
 -w	Write to file
