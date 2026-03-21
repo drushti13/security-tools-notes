@@ -1,151 +1,106 @@
 # Security Tools Notes
 
-This repository contains theoretical notes for commonly used cybersecurity tools.
+Structured notes covering practical usage of core cybersecurity tools across reconnaissance, analysis, and exploitation phases.
 
-These tools are used in penetration testing, network analysis, and vulnerability assessment.
+## Nmap — Network Scanning & Enumeration
 
-## Nmap
+- Performs network discovery and port scanning  
+- Identifies live hosts, open ports, and exposed services  
+- Supports service/version detection and OS fingerprinting  
+- Helps build a clear attack surface before further testing  
+- Used during reconnaissance and enumeration phases  
 
-Nmap is a network discovery and security auditing tool.
+**Focus Areas**
+- Host discovery (`-sn`, `-Pn`)  
+- Port scanning (`-p`, `-F`, `-p-`)  
+- Service detection (`-sV`, `-A`)  
+- Scan optimization (`-T4`, rate controls)  
 
-### Why it is used
-- To identify active hosts on a network  
-- To detect open ports and running services  
-- To gather information about target systems  
+## Wireshark — Network Traffic Analysis
 
-### What it does
-- Scans networks to find live systems  
-- Identifies open, closed, and filtered ports  
-- Detects service versions and operating systems  
+- Packet-level inspection of network traffic  
+- Captures and analyzes real-time communication  
+- Provides deep visibility into protocols and sessions  
+- Useful for detecting anomalies and debugging issues  
 
-### How it helps
-- Provides a clear attack surface of a target  
-- Helps in planning further exploitation  
-- Assists in network inventory and monitoring  
+**Focus Areas**
+- Packet structure and protocol breakdown  
+- Identifying suspicious traffic patterns  
+- DNS, HTTP, TCP analysis  
+- Filtering and stream following  
 
-### When to use
-- During reconnaissance phase of penetration testing  
-- Before vulnerability assessment  
-- When mapping a network environment  
+## Burp Suite — Web Application Testing
 
-## Wireshark
+- Intercepts and manipulates HTTP/HTTPS traffic  
+- Analyzes request-response lifecycle  
+- Identifies vulnerabilities in web applications  
+- Core tool for manual web security testing  
 
-Wireshark is a network protocol analyzer.
+**Focus Areas**
+- Proxy interception and traffic analysis  
+- Request manipulation  
+- Authentication and session testing  
+- Input validation testing  
 
-### Why it is used
-- To inspect and analyze network traffic  
-- To understand communication between systems  
+### Burp Repeater — Manual Request Testing
 
-### What it does
-- Captures packets in real time  
-- Displays detailed protocol-level information  
+- Sends and modifies HTTP requests manually  
+- Allows controlled testing of parameters  
+- Helps observe backend response behavior  
 
-### How it helps
-- Identifies suspicious or malicious traffic  
-- Helps troubleshoot network issues  
-- Provides deep visibility into packet behavior  
+**Focus Areas**
+- Parameter manipulation  
+- Testing edge cases  
+- Identifying logic flaws (e.g., IDOR, injection points)  
 
-### When to use
-- During network troubleshooting  
-- When analyzing suspicious traffic  
-- While learning protocol behavior  
+### Burp Intruder — Automated Input Testing
 
-## Burp Suite
+- Performs automated attacks using payload lists  
+- Supports brute force and fuzzing techniques  
+- Identifies weak input validation and authentication flaws  
 
-Burp Suite is a web application security testing tool.
+**Focus Areas**
+- Payload injection strategies  
+- Brute force testing  
+- Parameter fuzzing  
+- Response comparison  
 
-### Why it is used
-- To test web applications for vulnerabilities  
-- To intercept and manipulate HTTP requests  
+## Gobuster — Directory & DNS Enumeration
 
-### What it does
-- Acts as a proxy between browser and server  
-- Allows inspection and modification of requests and responses  
+- Discovers hidden directories and files using wordlists  
+- Performs DNS and virtual host enumeration  
+- Expands attack surface during reconnaissance  
 
-### How it helps
-- Identifies security flaws in web applications  
-- Enables manual and automated testing  
+**Focus Areas**
+- Directory brute forcing  
+- Wordlist usage and tuning  
+- Endpoint discovery  
+- Enumeration strategy  
 
-### When to use
-- During web application penetration testing  
-- When analyzing application behavior  
-- While testing authentication and input validation  
+## Metasploit — Exploitation Framework
 
-### Burp Repeater
+- Framework for developing and executing exploits  
+- Provides modules for payloads, exploits, and auxiliary tasks  
+- Used to validate and demonstrate real-world impact  
 
-Burp Repeater is a module within Burp Suite for manual request testing.
+**Focus Areas**
+- Exploit selection and configuration  
+- Payload handling  
+- Session management  
+- Post-exploitation basics  
 
-### Why it is used
-- To test how a server responds to modified requests  
+## Workflow Mapping
 
-### What it does
-- Allows resending and modifying HTTP requests multiple times  
+| Phase | Tools |
+|------|------|
+| Reconnaissance | Nmap, Gobuster |
+| Enumeration | Nmap, Burp Suite |
+| Analysis | Wireshark |
+| Exploitation | Metasploit |
+| Web Testing | Burp Suite (Repeater, Intruder) |
 
-### How it helps
-- Helps identify vulnerabilities like IDOR, SQL injection  
-- Enables precise testing of parameters  
+## Summary
 
-### When to use
-- After intercepting a request  
-- When testing specific inputs manually  
-- During detailed vulnerability analysis  
-
-
-### Burp Intruder
-
-Burp Intruder is used for automated attacks on web application inputs.
-
-### Why it is used
-- To perform automated testing with multiple payloads  
-
-### What it does
-- Sends multiple requests with different payload combinations  
-
-### How it helps
-- Identifies weak authentication mechanisms  
-- Discovers input validation flaws  
-
-### When to use
-- During brute force testing  
-- When fuzzing parameters  
-- While testing login forms and APIs  
-
-## Gobuster
-
-Gobuster is a tool for directory and DNS brute forcing.
-
-### Why it is used
-- To discover hidden files and directories  
-
-### What it does
-- Uses wordlists to brute-force endpoints  
-
-### How it helps
-- Finds hidden resources not visible in UI  
-- Expands attack surface  
-
-### When to use
-- During web reconnaissance  
-- Before vulnerability testing  
-- When mapping web application structure  
-
-## Metasploit
-
-Metasploit is a penetration testing framework.
-
-### Why it is used
-- To develop and execute exploits  
-
-### What it does
-- Provides modules for exploits, payloads, and auxiliary functions  
-
-### How it helps
-- Validates vulnerabilities  
-- Automates exploitation process  
-
-### When to use
-- After identifying vulnerabilities  
-- During exploitation phase  
-- In controlled penetration testing environments  
-
----
+- Covers practical usage across key cybersecurity phases  
+- Focused on tool functionality and real-world application  
+- Designed for quick revision and structured learning  
