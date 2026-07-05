@@ -39,6 +39,19 @@ A collection of my notes on cybersecurity tools that I've learned through TryHac
   - Attack modes
   - Password recovery using wordlists
 
+### Web Application Security
+
+- **Burp Suite** (`burp-suite.md`)
+  - Proxy for intercepting HTTP/HTTPS requests
+  - Repeater for modifying and replaying requests
+  - Intruder for brute-force attacks and fuzzing
+  - Decoder for encoding and decoding data
+  - Comparer for comparing requests and responses
+  - Sequencer for analyzing session token randomness
+  - Target and Site Map for application mapping
+  - Authentication testing
+  - Request manipulation and vulnerability testing
+ 
 ### Network Analysis
 
 - **Wireshark** (`wireshark.md`)
