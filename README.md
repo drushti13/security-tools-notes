@@ -1,177 +1,58 @@
 # Security Tools Notes
 
-Structured notes covering the **practical usage of core cybersecurity tools** across reconnaissance, analysis, and exploitation phases.
+A collection of my notes on cybersecurity tools that I've learned through TryHackMe, PortSwigger Web Security Academy, and CTFs. This repository focuses on the practical usage of each tool, including common commands, real-world use cases, and what I learned while using them.
 
+## Contents
 
-## Reconnaissance & Enumeration
+### Reconnaissance & Content Discovery
 
-### **Nmap — Network Scanning & Enumeration**
+- **Nmap** (`nmap.md`)
+  - Host discovery
+  - Port scanning
+  - Service and OS detection
+  - NSE scripts
 
-* Performs network discovery and port scanning
-* Identifies live hosts, open ports, and exposed services
-* Supports service/version detection and OS fingerprinting
-* Helps define the attack surface before further testing
+- **Google Dorking** (`google-dorking.md`)
+  - Advanced Google search operators
+  - Reverse image searching with Yandex and Google Lens
+  - Website history using Wayback Machine
+  - Technology fingerprinting with Wappalyzer
 
-**Focus Areas**
+- **Content Discovery Tools** (`content-discovery-tools.md`)
+  - Gobuster
+  - ffuf
+  - dirsearch
+  - Directory and file enumeration
+  - Virtual host discovery
 
-* Host discovery (`-sn`, `-Pn`)
-* Port scanning (`-p`, `-F`, `-p-`)
-* Service detection (`-sV`, `-A`)
-* Scan optimization (`-T4`, rate controls)
+### Password Cracking
 
+- **John the Ripper** (`john-the-ripper.md`)
+  - Hash identification
+  - Password cracking
+  - Custom rules
+  - Cracking ZIP, RAR, and SSH private keys
 
-### **Gobuster — Directory & DNS Enumeration**
+- **Hashcat** (`hashcat.md`)
+  - Dictionary attacks
+  - Hash modes
+  - Attack modes
+  - Password recovery using wordlists
 
-* Discovers hidden directories and files using wordlists
-* Performs DNS and virtual host enumeration
-* Expands attack surface during reconnaissance
+### Network Analysis
 
-**Focus Areas**
+- **Wireshark** (`wireshark.md`)
+  - Packet capture and analysis
+  - Protocol inspection
+  - Network troubleshooting
 
-* Directory brute forcing
-* Wordlist usage and tuning
-* Endpoint discovery
-* Enumeration strate
+- **tcpdump** (`tcpdump.md`)
+  - Command-line packet capture
+  - Traffic filtering
+  - PCAP analysis
 
-### **DNSDumpster — Passive DNS Reconnaissance**
+## Repository Goal
 
-* Maps DNS records and infrastructure
-* Identifies subdomains and related hosts
-* Visualizes network relationships
+I'm building this repository as I learn new cybersecurity tools through hands-on labs and CTFs. The goal is to keep practical notes that I can revisit while also documenting my learning journey.
 
-**Focus Areas**
-
-* Subdomain discovery
-* DNS record analysis (A, MX, NS, TXT)
-* Infrastructure mapping
-
-
-### **Shodan — Internet-Wide Reconnaissance**
-
-* Search engine for internet-connected devices
-* Identifies exposed services, ports, and banners
-* Provides geographic and service-level insights
-
-**Focus Areas**
-
-* Service/banner analysis
-* Port-based searches
-* Exposure assessment
-* OSINT-based reconnaissance
-
-
-## Network Analysis & Monitoring
-
-### **Wireshark — Network Traffic Analysis**
-
-* Packet-level inspection of network traffic
-* Captures and analyzes real-time communication
-* Provides deep visibility into protocols and sessions
-
-**Focus Areas**
-
-* Packet structure and protocol breakdown
-* Identifying suspicious traffic patterns
-* DNS, HTTP, TCP analysis
-* Filtering and stream following
-
-### **tcpdump — Command-Line Packet Capture**
-
-* Captures raw network packets in real time
-* Lightweight alternative to Wireshark
-* Useful for quick inspection and remote analysis
-
-**Focus Areas**
-
-* Interface-based capture
-* Protocol filtering (TCP, UDP, ICMP)
-* Writing `.pcap` files for analysis
-* Traffic debugging
-
-
-### **Snort — Intrusion Detection & Prevention System (IDS/IPS)**
-
-* Monitors network traffic for malicious activity
-* Uses rule-based detection for threats
-* Can operate in IDS or IPS mode
-
-**Focus Areas**
-
-* Rule creation and tuning
-* Traffic analysis and alerting
-* Signature-based detection
-* Network defense monitoring
-
-
-## Web Application Security
-
-### **Burp Suite — Web Application Testing**
-
-* Intercepts and manipulates HTTP/HTTPS traffic
-* Analyzes request-response lifecycle
-* Identifies vulnerabilities in web applications
-
-**Focus Areas**
-
-* Proxy interception and traffic analysis
-* Request manipulation
-* Authentication and session testing
-* Input validation testing
-
-
-### **Burp Repeater — Manual Request Testing**
-
-* Sends and modifies HTTP requests manually
-* Allows controlled testing of parameters
-* Observes backend response behavior
-
-**Focus Areas**
-
-* Parameter manipulation
-* Testing edge cases
-* Identifying logic flaws (e.g., IDOR, injections)
-
-
-### **Burp Intruder — Automated Input Testing**
-
-* Performs automated attacks using payload lists
-* Supports brute force and fuzzing techniques
-* Identifies weak input validation
-
-**Focus Areas**
-
-* Payload injection strategies
-* Brute force testing
-* Parameter fuzzing
-* Response comparison
-
-
-
-##  Exploitation
-
-### **Metasploit — Exploitation Framework**
-
-* Framework for developing and executing exploits
-* Provides modules for payloads and auxiliary tasks
-* Validates and demonstrates real-world impact
-
-**Focus Areas**
-
-* Exploit selection and configuration
-* Payload handling
-* Session management
-* Post-exploitation basics
-
-
-##  Workflow Mapping
-
-| Phase              | Tools                               |
-| ------------------ | ----------------------------------- |
-| Reconnaissance     | Nmap, Gobuster, DNSDumpster, Shodan |
-| Enumeration        | Nmap, Burp Suite                    |
-| Analysis           | Wireshark, tcpdump                  |
-| Exploitation       | Metasploit                          |
-| Web Testing        | Burp Suite (Repeater, Intruder)     |
-| Defense/Monitoring | Snort                               |
-
-
+More tools and notes will be added as I continue learning.
